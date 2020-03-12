@@ -1,3 +1,4 @@
+// Return boolean whether num::string is valid identification number based on Luhn algorithm
 const check = function (num) {
   let numStr = num.toString();
   let checkSum = numStr[numStr.length - 1];
@@ -15,7 +16,9 @@ const check = function (num) {
   }
   let calcCheckSum = (sumDigit*9) % 10;
   console.log("calc checksum:", calcCheckSum);
-  return parseInt(checkSum) == calcCheckSum? "Valid number" : "Invalid number";
+  return parseInt(checkSum) == calcCheckSum;
 }
 
 console.log(check(79927398713));
+
+module.exports = { check };
